@@ -1,0 +1,26 @@
+{
+  "name": "diadem-v2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.4",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "sass": "^1.65.1",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5"
+  }
+}
