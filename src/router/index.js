@@ -6,6 +6,7 @@ import Home from '../views/Home.vue'
 import Sale from '../views/Sale.vue'
 import Products from '../views/Products.vue'
 import About from '../views/About.vue'
+import Product from '../views/Product.vue'
 import BestSellers from '../views/BestSellers.vue'
 import ProductsCategory from '../views/ProductsCategory.vue'
 import Categories from '../views/Categories.vue'
@@ -28,6 +29,11 @@ const routes = [
       path: "/products",
       name: "products",
       component: Products,
+   },
+   {
+      path: "/products/:strName",
+      name: "product",
+      component: Product,
    },
    {
       path: "/about",

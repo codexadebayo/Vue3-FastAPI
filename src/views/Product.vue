@@ -21,7 +21,7 @@
                     </div>
                     <div class="flex border-t border-b mb-6 border-gray-200 py-2">
                         <span class="text-gray-500">Quantity</span>
-                        <span class="ml-auto text-gray-900">4</span>
+                        <span class="ml-auto text-gray-900">{{products.intInventory}}</span>
                     </div>
                     <div class="flex">
                         <span class="title-font font-medium text-2xl text-gray-900">$58.00</span>
@@ -49,7 +49,7 @@ export default {
         
         onMounted(async () => {
             try {
-                const response = await axiosClient.get("/products/searchname/:strName");
+                const response = await axiosClient.get("/products/:strName");
                 console.log(response.data);
                 products.value = response.data; // Update products using ref
             } catch (error) {

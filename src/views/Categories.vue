@@ -1,33 +1,46 @@
-<template lang="">
+<template>
     <div>
-        <router-link :to="{name: 'productsCategory', params: {category}}" v-for="category of categories" :key="category">{{category}}</router-link>
-        
+      <div class="p-2 w-full">
+        <router-link
+          :to="{ name: 'productsCategory', params: { category: category.strCategory }}"
+          v-for="category in categories"
+          :key="category.idCategory"
+          class="m-5"
+        >
+          <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            {{ category.strCategory }}
+          </button>
+        </router-link>
+      </div>
     </div>
-</template>
-<script>
-import axiosClient from '../axiosClient.js'
-import { ref, onMounted } from 'vue';
-
-export default {
+  </template>
+  
+  <script>
+  import axiosClient from '../axiosClient.js'
+  import { ref, onMounted } from 'vue';
+  
+  export default {
     setup() {
-        const categories = ref([]); // Declare products as a ref
-        
-        onMounted(async () => {
-            try {
-                const response = await axiosClient.get("/products/categories");
-                console.log(response.data);
-                categories.value = response.data; // Update products using ref
-            } catch (error) {
-                console.error(error);
-            }
-        });
-
-        return {
-            categories // Expose products to the template
-        };
+      const categories = ref([]);
+  
+      onMounted(async () => {
+        try {
+          const response = await axiosClient.get("/products/categories");
+          console.log(response.data);
+          categories.value = response.data;
+        } catch (error) {
+          console.error(error);
+        }
+      });
+  
+      return {
+        categories
+      };
     }
-}
-</script>
-<style lang="">
-    
-</style>
+  }
+  </script>
+  
+  <style>
+      
+  </style>
+  
