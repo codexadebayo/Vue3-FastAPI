@@ -3,6 +3,7 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from app.models import Base
+from app.db import setting
 
 from alembic import context
 
@@ -10,7 +11,7 @@ from alembic import context
 # access to the values within the .ini file in  use.
 config = context.config
 config.set_main_option (
-        "sqlalchemy.url", 'postgresql://postgres:d3spicabl3@localhost/diadem')
+        "sqlalchemy.url", f"postgresql://{setting.DATABASE_USERNAME}:{setting.DATABASE_PASSWORD}@{setting.DATABASE_HOSTNAME}:{setting.DATABASE_PORT}/{setting.DATABASE_NAME}")
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
