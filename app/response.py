@@ -11,3 +11,9 @@ class Items(BaseModel):
 
     class Config:
         from_attributes = True
+
+class Categories(BaseModel):
+    strCategory: str
+
+    class Config:
+        from_attributes = True

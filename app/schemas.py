@@ -7,3 +7,6 @@ class ItemBase(BaseModel):
     strImg: str
     intInventory: int
     strCategory: str
+
+class CategoryBase(BaseModel):
+    strCategory: str

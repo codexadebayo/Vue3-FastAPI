@@ -5,6 +5,7 @@ class User(BaseSettings):
     DATABASE_USERNAME: str
     DATABASE_NAME: str
     DATABASE_HOSTNAME: str
+    DATABASE_PORT:int
     # intACCESS_TOKEN_EXPIRE_MINUTES: int
     # strDATABASE_PORT: str
     # strALGORITHM: str

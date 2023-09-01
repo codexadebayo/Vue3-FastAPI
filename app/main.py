@@ -95,3 +95,12 @@ async def get_product_by_name(product_id:int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Page Not Found')
     
     return product_query
+
+@app.post("/categories", status_code=status.HTTP_201_CREATED, response_model=response.Categories)
+async def create_prod(category: schemas.CategoryBase, db: Session = Depends(get_db)):
+    new_category = models.Category(**category.dict())
+    db.add(new_category)
+    db.commit()
+    db.refresh(new_category)
+
+    return new_category

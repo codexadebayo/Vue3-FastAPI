@@ -7,7 +7,7 @@ setting=User()
 
 
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{setting.DATABASE_USERNAME}:{setting.DATABASE_PASSWORD}@{setting.DATABASE_HOSTNAME}/{setting.DATABASE_NAME}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{setting.DATABASE_USERNAME}:{setting.DATABASE_PASSWORD}@{setting.DATABASE_HOSTNAME}:{setting.DATABASE_PORT}/{setting.DATABASE_NAME}"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
 )
